@@ -1,5 +1,5 @@
 @at-root .mobile {
-  input[type="date"][uib-datepicker-popup] {
+  input[type='date'][uib-datepicker-popup] {
     line-height: normal;
 
     &::-webkit-inner-spin-button,
@@ -25,8 +25,8 @@
       height: $input-height-base !important;
       line-height: $input-height-base !important;
       padding: 0 !important;
-      position: absolute !important;
       pointer-events: none;
+      position: absolute !important;
       right: 0 !important;
       width: 38px !important;
       z-index: 3;
