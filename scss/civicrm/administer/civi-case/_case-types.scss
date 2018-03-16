@@ -36,8 +36,12 @@
       .ui-tabs-panel {
         padding: 0 !important;
 
-        table:first-child {
+        * table:first-child {
           border-top: 0;
+
+          tr > td {
+            vertical-align: top;
+          }
         }
       }
     }
