@@ -34,7 +34,16 @@
       }
 
       .ui-tabs-panel {
+        display: table;
+        overflow-x: auto;
         padding: 0 !important;
+        width: 100%;
+
+        // Makes sure any element inside the panel has a true width 100% depending
+        // on the widest sibling and not the panel's width:
+        > * {
+          display: table-row;
+        }
 
         * table:first-child {
           border-top: 0;
