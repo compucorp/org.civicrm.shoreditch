@@ -3,20 +3,14 @@
 }
 
 .btn-group {
-
   .btn {
+    border-color: transparent;
     box-shadow: none;
-    border-color: $input-border;
 
-    &:not([class*=" btn-"]) {
+    &:not([class*=' btn-']) {
       &:hover {
-        border-color: $input-border;
+        border-color: transparent;
       }
-    }
-
-    // Adds missing border color on button hover:
-    &:hover {
-      border-color: $crm-grayblue-darker;
     }
 
     &.active {
