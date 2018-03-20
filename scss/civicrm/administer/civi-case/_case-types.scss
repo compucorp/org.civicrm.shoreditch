@@ -37,9 +37,10 @@
         overflow-x: auto;
         padding: 0 !important;
 
-        // Makes sure any element inside the panel has a true width 100% depending
+        // Makes sure child elements inside the panel have a true width 100% depending
         // on the widest sibling and not the panel's width:
-        > * {
+        > div,
+        > .crm-accordion-wrapper {
           display: table-row;
 
           @media (min-width: $screen-lg) {
@@ -47,10 +48,10 @@
           }
         }
 
-        * table:first-child {
+        table {
           border-top: 0;
 
-          tr > td {
+          td {
             vertical-align: top;
           }
         }
