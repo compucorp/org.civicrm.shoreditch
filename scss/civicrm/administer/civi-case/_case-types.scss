@@ -34,10 +34,26 @@
       }
 
       .ui-tabs-panel {
+        overflow-x: auto;
         padding: 0 !important;
 
-        table:first-child {
+        // Makes sure child elements inside the panel have a true width 100% depending
+        // on the widest sibling and not the panel's width:
+        > div,
+        > .crm-accordion-wrapper {
+          display: table-row;
+
+          @media (min-width: $screen-lg) {
+            display: inherit;
+          }
+        }
+
+        table {
           border-top: 0;
+
+          td {
+            vertical-align: top;
+          }
         }
       }
     }
