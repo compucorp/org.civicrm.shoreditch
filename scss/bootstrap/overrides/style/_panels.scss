@@ -1,6 +1,7 @@
+//
 .panel {
   @include box-shadow(none);
-  border: none;
+  border: 0;
   margin-bottom: $grid-gutter-width;
 }
 
@@ -13,6 +14,7 @@
 
     // A (temporary?) solution to remove extra spacing in a
     // panel containing an horizontal form
+    /* stylelint-disable max-nesting-depth, selector-max-compound-selectors */
     &.form-horizontal {
       > .row:last-child {
         .form-group {
@@ -20,6 +22,7 @@
         }
       }
     }
+    /* stylelint-enable */
   }
 }
 
@@ -28,7 +31,7 @@
 }
 
 .panel-heading {
-  border: none;
+  border: 0;
 }
 
 .panel-title {
@@ -97,12 +100,6 @@
   > .panel-heading {
     .btn-group-sm {
       margin: -13px 0 -10px 0;
-
-      // TO DO: too much nesting, need to fix this
-      > .btn {
-        padding-left: 20px;
-        padding-right: 20px;
-      }
     }
   }
 
@@ -230,7 +227,7 @@
 
 // TODO: Move it into its own partial, it's not strictly related to panels
 [data-toggle='collapse'] {
-  &:before {
+  &::before {
     @include fa-icon();
     color: inherit;
     content: $fa-var-angle-down;
@@ -238,7 +235,7 @@
     margin-right: 10px;
   }
 
-  &.collapsed:before {
+  &.collapsed::before {
     content: $fa-var-angle-right;
   }
 }
