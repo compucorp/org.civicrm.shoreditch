@@ -14,9 +14,7 @@
     // A (temporary?) solution to remove extra spacing in a
     // panel containing an horizontal form
     &.form-horizontal {
-
       > .row:last-child {
-
         .form-group {
           margin-bottom: 0;
         }
@@ -58,11 +56,11 @@
 // Subheading and subtitle
 .panel-subheading {
 
+  padding: $crm-panel-subheading-padding;
+
   .panel-heading + & {
     border-top: 1px solid transparent;
   }
-
-  padding: $crm-panel-subheading-padding;
 }
 
 .panel-subtitle {
@@ -97,7 +95,6 @@
   }
 
   > .panel-heading {
-
     .btn-group-sm {
       margin: -13px 0 -10px 0;
 
@@ -116,7 +113,7 @@
   }
 
   // Status strips
-  &[class*="panel-strip-"] {
+  &[class*='panel-strip-'] {
     border-left: $crm-panel-status-strip-width solid transparent;
   }
 
@@ -142,61 +139,56 @@
 }
 
 .panel-primary {
-
   > .panel-subheading {
-    background: $panel-primary-heading-bg;
-    color: $panel-primary-text;
-    border-top-color: $panel-info-border;
 
     @include shadow-mask($panel-primary-heading-bg, 'top', -11px);
+    background: $panel-primary-heading-bg;
+    border-top-color: $panel-info-border;
+    color: $panel-primary-text;
   }
 }
 
 .panel-success {
-
   > .panel-heading {
     color: $gray-darker;
   }
 
   > .panel-subheading {
-    background: $panel-success-heading-bg;
-    color: $panel-success-text;
-    border-top-color: $panel-success-border;
 
     @include shadow-mask($panel-success-heading-bg, 'top', -11px);
+    background: $panel-success-heading-bg;
+    border-top-color: $panel-success-border;
+    color: $panel-success-text;
   }
 }
 
 .panel-info {
-
   > .panel-subheading {
-    background: $panel-info-heading-bg;
-    color: $panel-info-text;
-    border-top-color: $panel-info-border;
 
     @include shadow-mask($panel-info-heading-bg, 'top', -11px);
+    background: $panel-info-heading-bg;
+    border-top-color: $panel-info-border;
+    color: $panel-info-text;
   }
 }
 
 .panel-warning {
-
   > .panel-subheading {
-    background: $panel-warning-heading-bg;
-    color: $panel-warning-text;
-    border-top-color: $panel-warning-border;
 
     @include shadow-mask($panel-warning-heading-bg, 'top', -11px);
+    background: $panel-warning-heading-bg;
+    border-top-color: $panel-warning-border;
+    color: $panel-warning-text;
   }
 }
 
 .panel-danger {
-
   > .panel-subheading {
-    background: $panel-danger-heading-bg;
-    color: $panel-danger-text;
-    border-top-color: $panel-danger-border;
 
     @include shadow-mask($panel-danger-heading-bg, 'top', -11px);
+    background: $panel-danger-heading-bg;
+    border-top-color: $panel-danger-border;
+    color: $panel-danger-text;
   }
 }
 
@@ -205,7 +197,6 @@
 .panel-info,
 .panel-warning,
 .panel-danger {
-
   > .panel-body,
   > .panel-footer,
   > .panel-heading,
@@ -231,7 +222,6 @@
 
 // Panel heading with buttons, aligned vertically
 .panel-heading-w-buttons {
-
   .btn {
     margin: -8px 0 -8px 10px;
   }
@@ -239,8 +229,7 @@
 
 
 // TODO: Move it into its own partial, it's not strictly related to panels
-[data-toggle="collapse"] {
-
+[data-toggle='collapse'] {
   &:before {
     @include fa-icon();
     color: inherit;
