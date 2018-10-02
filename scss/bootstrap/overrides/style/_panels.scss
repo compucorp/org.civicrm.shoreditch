@@ -38,6 +38,16 @@
   font-size: $font-size-h2;
   font-weight: $crm-font-weight-h2;
   line-height: $headings-line-height;
+
+  a {
+    text-decoration: none !important;
+  }
+
+  [data-toggle='collapse'][aria-expanded='false'] {
+    &::before {
+      content: $fa-var-angle-right;
+    }
+  }
 }
 
 .panel-title-sm {
@@ -107,6 +117,14 @@
     background: $panel-default-heading-bg;
     border-top-color: $gray-light;
     color: $panel-default-text;
+  }
+
+  &.panel-w-vertical-tabs {
+    .panel-body {
+      background: transparent;
+      border-top: 0 !important;
+      padding: 0;
+    }
   }
 
   // Status strips
