@@ -1,0 +1,34 @@
+@mixin checkbox-switch-context($colour) {
+  input:checked + span::before {
+    background: $colour;
+  }
+}
+
+@mixin checkbox-switch-size($size) {
+  line-height: $size;
+
+  input + span::before {
+    border-radius: $size;
+    width: $size * 2;
+  }
+
+  input + span::after {
+    border-radius: $size;
+    vertical-align: middle;
+    width: $size;
+  }
+
+  input + span {
+    padding-left: $size * 2;
+  }
+
+  input + span::after,
+  input + span::before {
+    height: $size;
+    line-height: $size;
+  }
+
+  input:checked + span::after {
+    margin-left: $size;
+  }
+}
