@@ -1,5 +1,6 @@
 /* Variables */
 
+$checkbox-switch-speed:       0.2s;
 $checkbox-switch-gap:         2px;
 $checkbox-switch-size-small:  10px;
 $checkbox-switch-size-normal: 20px;
@@ -42,7 +43,7 @@ $checkbox-switch-size-large:  40px;
   height: $checkbox-switch-size-normal;
   left: 0;
   position: absolute;
-  transition: background-color 0.2s ease-out;
+  transition: background-color $checkbox-switch-speed ease-out;
   width: $checkbox-switch-size-normal * 2;
 }
 
@@ -60,12 +61,12 @@ $checkbox-switch-size-large:  40px;
   position: absolute;
   text-align: center;
   top: $checkbox-switch-size-normal / 4;
-  transition: margin-left 0.1s ease-in-out;
+  transition: margin-left ($checkbox-switch-speed / 2) ease-in-out;
   width: $checkbox-switch-size-normal;
 }
 
 .checkbox-switch input:checked + span::after {
-  animation: popIn ease-in 0.3s normal;
+  animation: popIn ease-in ($checkbox-switch-speed * 1.5) normal;
   background-clip: padding-box;
   border: solid transparent $checkbox-switch-gap;
   content: '';
@@ -76,11 +77,11 @@ $checkbox-switch-size-large:  40px;
 
 .checkbox-switch input:checked + span::before {
   background-color: $brand-primary;
-  transition: background-color 0.2s ease-in;
+  transition: background-color $checkbox-switch-speed ease-in;
 }
 
 .checkbox-switch input:not(:checked) + span::after {
-  animation: popOut ease-in 0.3s normal;
+  animation: popOut ease-in ($checkbox-switch-speed * 1.5) normal;
 }
 
 /* Availability */
@@ -110,99 +111,43 @@ $checkbox-switch-size-large:  40px;
 
 /* Sizes */
 
-.checkbox-switch.checkbox-switch-md input + span::before {
-  border-radius: $checkbox-switch-size-medium;
-}
+@mixin checkbox-switch-size($size) {
+  line-height: $size;
 
-.checkbox-switch.checkbox-switch-md input + span::after {
-  border-radius: $checkbox-switch-size-medium;
-}
+  input + span::before {
+    border-radius: $size;
+    width: $size * 2;
+  }
 
-.checkbox-switch.checkbox-switch-lg input + span::before {
-  border-radius: $checkbox-switch-size-large;
-}
+  input + span::after {
+    border-radius: $size;
+    vertical-align: middle;
+    width: $size;
+  }
 
-.checkbox-switch.checkbox-switch-lg input + span::after {
-  border-radius: $checkbox-switch-size-large;
+  input + span {
+    padding-left: $size * 2;
+  }
+
+  input + span::after,
+  input + span::before {
+    height: $size;
+    line-height: $size;
+  }
+
+  input:checked + span::after {
+    margin-left: $size;
+  }
 }
 
 .checkbox-switch-sm {
-  line-height: $checkbox-switch-size-small;
-}
-
-.checkbox-switch-sm input + span {
-  padding-left: $checkbox-switch-size-small * 2;
-}
-
-.checkbox-switch-sm input + span::before {
-  width: $checkbox-switch-size-small * 2;
-}
-
-.checkbox-switch-sm input + span::after,
-.checkbox-switch-sm input + span::before {
-  height: $checkbox-switch-size-small;
-  line-height: $checkbox-switch-size-small;
-}
-
-.checkbox-switch-sm input + span::after {
-  vertical-align: middle;
-  width: $checkbox-switch-size-small;
-}
-
-.checkbox-switch-sm input:checked + span::after {
-  margin-left: $checkbox-switch-size-small;
+  @include checkbox-switch-size($checkbox-switch-size-small);
 }
 
 .checkbox-switch-md {
-  line-height: $checkbox-switch-size-medium;
-}
-
-.checkbox-switch-md input + span {
-  padding-left: $checkbox-switch-size-medium * 2;
-}
-
-.checkbox-switch-md input + span::before {
-  width: $checkbox-switch-size-medium * 2;
-}
-
-.checkbox-switch-md input + span::after,
-.checkbox-switch-md input + span::before {
-  height: $checkbox-switch-size-medium;
-  line-height: $checkbox-switch-size-medium;
-}
-
-.checkbox-switch-md input + span::after {
-  vertical-align: middle;
-  width: $checkbox-switch-size-medium;
-}
-
-.checkbox-switch-md input:checked + span::after {
-  margin-left: $checkbox-switch-size-medium;
+  @include checkbox-switch-size($checkbox-switch-size-medium);
 }
 
 .checkbox-switch-lg {
-  line-height: $checkbox-switch-size-large;
-}
-
-.checkbox-switch-lg input + span {
-  padding-left: $checkbox-switch-size-large * 2;
-}
-
-.checkbox-switch-lg input + span::before {
-  width: $checkbox-switch-size-large * 2;
-}
-
-.checkbox-switch-lg input + span::after,
-.checkbox-switch-lg input + span::before {
-  height: $checkbox-switch-size-large;
-  line-height: $checkbox-switch-size-large;
-}
-
-.checkbox-switch-lg input + span::after {
-  vertical-align: middle;
-  width: $checkbox-switch-size-large;
-}
-
-.checkbox-switch-lg input:checked + span::after {
-  margin-left: $checkbox-switch-size-large;
+  @include checkbox-switch-size($checkbox-switch-size-large);
 }
