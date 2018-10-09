@@ -359,7 +359,7 @@ $button-border-radius: 2px;
     }
 
     &[disabled] {
-      opacity: 0.65;
+      opacity: $input-disabled-opacity;
     }
   }
 }
