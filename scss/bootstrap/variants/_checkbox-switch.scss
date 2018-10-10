@@ -11,20 +11,33 @@
     top: 0;
     visibility: hidden;
     width: 0;
-  }
 
-  :checked {
-    + .checkbox-switch-label {
-      &::after {
-        background-clip: padding-box;
-        margin-left: $crm-checkbox-switch-size-normal;
-      }
+    &:checked {
+      + .checkbox-switch-label {
+        /* stylelint-disable max-nesting-depth */
+        &::after {
+          background-clip: padding-box;
+          margin-left: $crm-checkbox-switch-size-normal;
+        }
 
-      &::before {
-        background-color: $brand-primary;
-        transition: background-color $crm-checkbox-switch-speed ease-in;
+        &::before {
+          background-color: $brand-primary;
+          transition: background-color $crm-checkbox-switch-speed ease-in;
+        }
+        /* stylelint-enable */
       }
     }
+
+    /* Availability */
+
+    /* stylelint-disable selector-no-qualifying-type */
+    &[disabled] {
+      + span {
+        cursor: not-allowed;
+        opacity: $crm-input-disabled-opacity;
+      }
+    }
+    /* stylelint-enable */
   }
 
   /* Context (colours) */
@@ -43,15 +56,6 @@
 
   &.checkbox-switch-info {
     @include checkbox-switch-colour($brand-info);
-  }
-
-  /* Availability */
-
-  [disabled] {
-    + span {
-      cursor: not-allowed;
-      opacity: $crm-input-disabled-opacity;
-    }
   }
 
   /* Sizes (via classes) */
