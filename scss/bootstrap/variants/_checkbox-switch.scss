@@ -11,33 +11,6 @@
     top: 0;
     visibility: hidden;
     width: 0;
-
-    &:checked {
-      + .checkbox-switch-label {
-        /* stylelint-disable max-nesting-depth */
-        &::after {
-          background-clip: padding-box;
-          margin-left: $crm-checkbox-switch-size-normal;
-        }
-
-        &::before {
-          background-color: $brand-primary;
-          transition: background-color $crm-checkbox-switch-speed ease-in;
-        }
-        /* stylelint-enable */
-      }
-    }
-
-    /* Availability */
-
-    /* stylelint-disable selector-no-qualifying-type */
-    &[disabled] {
-      + span {
-        cursor: not-allowed;
-        opacity: $crm-input-disabled-opacity;
-      }
-    }
-    /* stylelint-enable */
   }
 
   /* Context (colours) */
@@ -114,5 +87,24 @@
     top: 0;
     transition: margin-left ($crm-checkbox-switch-speed / 2) ease-in-out;
     width: $crm-checkbox-switch-size-normal;
+  }
+
+  input:checked + & {
+    &::after {
+      background-clip: padding-box;
+      margin-left: $crm-checkbox-switch-size-normal;
+    }
+
+    &::before {
+      background-color: $brand-primary;
+      transition: background-color $crm-checkbox-switch-speed ease-in;
+    }
+  }
+
+  /* Availability */
+
+  input[disabled] + & { /* stylelint-disable-line selector-no-qualifying-type */
+    cursor: not-allowed;
+    opacity: $crm-input-disabled-opacity;
   }
 }
