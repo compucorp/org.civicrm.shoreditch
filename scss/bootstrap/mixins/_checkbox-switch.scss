@@ -1,34 +1,40 @@
 @mixin checkbox-switch-context($colour) {
-  input:checked + span::before {
-    background: $colour;
+  :checked {
+    + .checkbox-switch-label {
+      &::before {
+        background: $colour;
+      }
+    }
   }
 }
 
 @mixin checkbox-switch-size($size) {
   line-height: $size;
 
-  input + span::before {
-    border-radius: $size;
-    width: $size * 2;
-  }
-
-  input + span::after {
-    border-radius: $size;
-    vertical-align: middle;
-    width: $size;
-  }
-
-  input + span {
+  .checkbox-switch-label {
     padding-left: $size * 2;
+
+    &::before,
+    &::after {
+      height: $size;
+      line-height: $size;
+    }
+
+    &::before {
+      border-radius: $size;
+      width: $size * 2;
+    }
+
+    &::after {
+      border-radius: $size;
+      vertical-align: middle;
+      width: $size;
+    }
   }
 
-  input + span::after,
-  input + span::before {
-    height: $size;
-    line-height: $size;
-  }
-
-  input:checked + span::after {
-    margin-left: $size;
+  :checked {
+    + .checkbox-switch-label::after {
+      margin-left: $size;
+    }
   }
 }

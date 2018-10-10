@@ -11,57 +11,19 @@
     top: 0;
     visibility: hidden;
     width: 0;
-
-    + span {
-      cursor: pointer;
-      padding-left: $crm-checkbox-switch-size-normal * 2;
-      user-select: none;
-    }
-
-    + span::before {
-      background-color: $crm-gray-matte;
-      border-radius: $crm-checkbox-switch-size-normal;
-      content: '';
-      display: inline-block;
-      height: $crm-checkbox-switch-size-normal;
-      left: 0;
-      position: absolute;
-      transition: background-color $crm-checkbox-switch-speed ease-out;
-      width: $crm-checkbox-switch-size-normal * 2;
-    }
-
-    + span::after {
-      background-clip: padding-box;
-      background-color: $crm-white;
-      border: solid transparent $crm-checkbox-switch-gap;
-      border-radius: $crm-checkbox-switch-size-normal;
-      content: '';
-      display: block;
-      height: $crm-checkbox-switch-size-normal;
-      left: 0;
-      position: absolute;
-      top: 0;
-      transition: margin-left ($crm-checkbox-switch-speed / 2) ease-in-out;
-      width: $crm-checkbox-switch-size-normal;
-    }
   }
 
-  input:checked {
-    + span::after {
-      animation: popIn ease-in ($crm-checkbox-switch-speed * 1.5) normal;
-      background-clip: padding-box;
-      margin-left: $crm-checkbox-switch-size-normal;
-    }
+  :checked {
+    + .checkbox-switch-label {
+      &::after {
+        background-clip: padding-box;
+        margin-left: $crm-checkbox-switch-size-normal;
+      }
 
-    + span::before {
-      background-color: $brand-primary;
-      transition: background-color $crm-checkbox-switch-speed ease-in;
-    }
-  }
-
-  input:not(:checked) {
-    + span::after {
-      animation: popOut ease-in ($crm-checkbox-switch-speed * 1.5) normal;
+      &::before {
+        background-color: $brand-primary;
+        transition: background-color $crm-checkbox-switch-speed ease-in;
+      }
     }
   }
 
@@ -114,5 +76,39 @@
 .form-group-lg {
   .checkbox-switch {
     @include checkbox-switch-size($crm-checkbox-switch-size-large);
+  }
+}
+
+/* Switch label */
+
+.checkbox-switch-label {
+  cursor: pointer;
+  padding-left: $crm-checkbox-switch-size-normal * 2;
+  user-select: none;
+
+  &::before,
+  &::after {
+    border-radius: $crm-checkbox-switch-size-normal;
+    content: '';
+    height: $crm-checkbox-switch-size-normal;
+    left: 0;
+    position: absolute;
+  }
+
+  &::before {
+    background-color: $crm-gray-matte;
+    display: inline-block;
+    transition: background-color $crm-checkbox-switch-speed ease-out;
+    width: $crm-checkbox-switch-size-normal * 2;
+  }
+
+  &::after {
+    background-clip: padding-box;
+    background-color: $crm-white;
+    border: solid transparent $crm-checkbox-switch-gap;
+    display: block;
+    top: 0;
+    transition: margin-left ($crm-checkbox-switch-speed / 2) ease-in-out;
+    width: $crm-checkbox-switch-size-normal;
   }
 }
