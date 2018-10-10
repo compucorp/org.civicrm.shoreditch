@@ -30,19 +30,19 @@
   /* Context (colours) */
 
   &.checkbox-switch-warning {
-    @include checkbox-switch-context($brand-warning);
+    @include checkbox-switch-colour($brand-warning);
   }
 
   &.checkbox-switch-danger {
-    @include checkbox-switch-context($brand-danger);
+    @include checkbox-switch-colour($brand-danger);
   }
 
   &.checkbox-switch-success {
-    @include checkbox-switch-context($brand-success);
+    @include checkbox-switch-colour($brand-success);
   }
 
   &.checkbox-switch-info {
-    @include checkbox-switch-context($brand-info);
+    @include checkbox-switch-colour($brand-info);
   }
 
   /* Availability */

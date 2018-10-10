@@ -1,13 +1,31 @@
-@mixin checkbox-switch-context($colour) {
+/// Sets the colour to the `.checkbox-switch` component
+///
+/// @param {HexCode} $colour e.g. #ff44cc
+/// @output mixed
+///
+/// @example
+///   .checkbox-switch {
+///     @include checkbox-switch-colour(#ff44cc);
+///   }
+@mixin checkbox-switch-colour($colour) {
   :checked {
     + .checkbox-switch-label {
       &::before {
-        background: $colour;
+        background-color: $colour;
       }
     }
   }
 }
 
+/// Sets the size of the `.checkbox-switch` component
+///
+/// @param {Number} $size e.g. 20px
+/// @output mixed
+///
+/// @example
+///   .checkbox-switch {
+///     @include checkbox-switch-size(30px);
+///   }
 @mixin checkbox-switch-size($size) {
   line-height: $size;
 
