@@ -1,4 +1,5 @@
 .checkbox-switch {
+  padding-top: 0 !important;
   position: relative;
 
   input {
@@ -39,7 +40,7 @@
       height: $crm-checkbox-switch-size-normal;
       left: 0;
       position: absolute;
-      top: $crm-checkbox-switch-size-normal / 4;
+      top: 0;
       transition: margin-left ($crm-checkbox-switch-speed / 2) ease-in-out;
       width: $crm-checkbox-switch-size-normal;
     }
