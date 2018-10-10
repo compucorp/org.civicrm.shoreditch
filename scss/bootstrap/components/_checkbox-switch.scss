@@ -92,13 +92,27 @@
     }
   }
 
-  /* Sizes */
+  /* Sizes (via classes) */
 
   &.checkbox-switch-sm {
     @include checkbox-switch-size($crm-checkbox-switch-size-small);
   }
 
   &.checkbox-switch-lg {
+    @include checkbox-switch-size($crm-checkbox-switch-size-large);
+  }
+}
+
+/* Sizes (via form groups) */
+
+.form-group-sm {
+  .checkbox-switch {
+    @include checkbox-switch-size($crm-checkbox-switch-size-small);
+  }
+}
+
+.form-group-lg {
+  .checkbox-switch {
     @include checkbox-switch-size($crm-checkbox-switch-size-large);
   }
 }
