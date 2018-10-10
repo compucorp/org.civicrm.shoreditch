@@ -183,6 +183,8 @@ $input-color-placeholder:   $crm-gray-matte !default;
 $input-border-radius-large: $border-radius-base !default;
 $input-border-radius-small: $border-radius-base !default;
 
+$crm-input-disabled-opacity: 0.65;
+
 //== Dropdowns
 //
 //## Dropdown menu container and contents.
@@ -401,3 +403,11 @@ $crm-uib-datepicker-header-font-weight:    $crm-font-weight-h5 !default;
 $crm-uib-datepicker-muted-cell-color:      #dcdddd !default;
 $crm-uib-datepicker-today-bg-color:        transparent !default;
 $crm-uib-datepicker-today-font-color:      $brand-primary !default;
+
+//== Checkbox Switch
+
+$crm-checkbox-switch-speed:       0.2s;
+$crm-checkbox-switch-gap:         2px;
+$crm-checkbox-switch-size-small:  16px;
+$crm-checkbox-switch-size-normal: 20px;
+$crm-checkbox-switch-size-large:  30px;

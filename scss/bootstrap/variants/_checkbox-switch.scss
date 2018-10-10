@@ -1,0 +1,110 @@
+.checkbox-switch {
+  padding-top: 0 !important;
+  position: relative;
+
+  input {
+    bottom: 0;
+    height: 0;
+    left: 0;
+    margin: 0;
+    right: 0;
+    top: 0;
+    visibility: hidden;
+    width: 0;
+  }
+
+  /* Context (colours) */
+
+  &.checkbox-switch-warning {
+    @include checkbox-switch-colour($brand-warning);
+  }
+
+  &.checkbox-switch-danger {
+    @include checkbox-switch-colour($brand-danger);
+  }
+
+  &.checkbox-switch-success {
+    @include checkbox-switch-colour($brand-success);
+  }
+
+  &.checkbox-switch-info {
+    @include checkbox-switch-colour($brand-info);
+  }
+
+  /* Sizes (via classes) */
+
+  &.checkbox-switch-sm {
+    @include checkbox-switch-size($crm-checkbox-switch-size-small);
+  }
+
+  &.checkbox-switch-lg {
+    @include checkbox-switch-size($crm-checkbox-switch-size-large);
+  }
+}
+
+/* Sizes (via form groups) */
+
+.form-group-sm {
+  .checkbox-switch {
+    @include checkbox-switch-size($crm-checkbox-switch-size-small);
+  }
+}
+
+.form-group-lg {
+  .checkbox-switch {
+    @include checkbox-switch-size($crm-checkbox-switch-size-large);
+  }
+}
+
+/* Switch label */
+
+.checkbox-switch-label {
+  cursor: pointer;
+  padding-left: $crm-checkbox-switch-size-normal * 2;
+  user-select: none;
+
+  &::before,
+  &::after {
+    border-radius: $crm-checkbox-switch-size-normal;
+    content: '';
+    height: $crm-checkbox-switch-size-normal;
+    left: 0;
+    position: absolute;
+  }
+
+  &::before {
+    background-color: $crm-gray-matte;
+    display: inline-block;
+    transition: background-color $crm-checkbox-switch-speed ease-out;
+    width: $crm-checkbox-switch-size-normal * 2;
+  }
+
+  &::after {
+    background-clip: padding-box;
+    background-color: $crm-white;
+    border: solid transparent $crm-checkbox-switch-gap;
+    display: block;
+    top: 0;
+    transition: margin-left ($crm-checkbox-switch-speed / 2) ease-in-out;
+    width: $crm-checkbox-switch-size-normal;
+  }
+
+  input:checked + & {
+    &::after {
+      background-clip: padding-box;
+      margin-left: $crm-checkbox-switch-size-normal;
+    }
+
+    &::before {
+      background-color: $brand-primary;
+      transition: background-color $crm-checkbox-switch-speed ease-in;
+    }
+  }
+
+  /* Availability */
+
+  input[disabled] + & { /* stylelint-disable-line selector-no-qualifying-type */
+    cursor: not-allowed;
+    opacity: $crm-input-disabled-opacity;
+  }
+}
