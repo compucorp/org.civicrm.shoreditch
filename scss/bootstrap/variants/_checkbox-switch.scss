@@ -1,5 +1,4 @@
 .checkbox-switch {
-  padding-top: 0 !important;
   position: relative;
 
   input {
@@ -11,6 +10,10 @@
     top: 0;
     visibility: hidden;
     width: 0;
+  }
+
+  label {
+    min-height: auto;
   }
 
   /* Context (colours) */
@@ -83,8 +86,8 @@
     background-clip: padding-box;
     background-color: $crm-white;
     border: solid transparent $crm-checkbox-switch-gap;
+    bottom: 0;
     display: block;
-    top: 0;
     transition: margin-left ($crm-checkbox-switch-speed / 2) ease-in-out;
     width: $crm-checkbox-switch-size-normal;
   }
