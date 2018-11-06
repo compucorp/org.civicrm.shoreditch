@@ -41,12 +41,22 @@
   padding: $crm-nav-tab-content-padding;
 }
 
+.nav-pills {
+  > li {
+    > a:focus {
+      background-color: transparent;
+    }
+  }
+}
+
 //== Horizontal variation of .nav-pills
 .nav-pills-horizontal {
   @include box-shadow($box-shadow);
   padding-left: 20px;
 
   > li {
+    opacity: 0.75;
+
     > a {
       padding: $crm-nav-stacked-link-padding;
     }
@@ -61,10 +71,12 @@
   }
 
   > .disabled {
-    opacity: 0.5;
+    opacity: 0.4;
   }
 
   > .active {
+    opacity: 1;
+
     > a {
       background: transparent !important;
       position: relative;
