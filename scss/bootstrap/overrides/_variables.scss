@@ -1,3 +1,9 @@
+// Namespace for the entire theme
+// (set it to an empty string to remove the namespace)
+$bootstrap-namespace: '#bootstrap-theme';
+
+// Any selector within this namespace will be place outside
+// of $bootstrap-namespace during the build process
 $outside-namespace-marker: '.___outside-namespace';
 
 $box-shadow: 0 3px 18px 0 rgba(48, 40, 40, 0.25);
@@ -116,13 +122,6 @@ $crm-font-weight-h3:          600 !default;
 $crm-font-weight-h4:          500 !default;
 $crm-font-weight-h5:          700 !default;
 $crm-font-weight-h6:          500 !default;
-
-
-//== Iconography
-//
-//## Specify custom location and filename of the included Glyphicons icon font. Useful for those including Bootstrap via Bower.
-
-$icon-font-path: '../vendor/bootstrap/fonts/bootstrap/' !default;
 
 //== Layout
 //
@@ -373,6 +372,8 @@ $breadcrumb-separator:           '>' !default;
 //
 //##
 
+$text-muted:                     #aab2b9 !default;
+
 $dl-horizontal-offset:           250px !default;
 
 $blockquote-small-color:         $crm-copy !default;
@@ -411,3 +412,10 @@ $crm-checkbox-switch-gap:         2px;
 $crm-checkbox-switch-size-small:  16px;
 $crm-checkbox-switch-size-normal: 20px;
 $crm-checkbox-switch-size-large:  30px;
+
+//== CRM Wizard
+//
+//##
+
+$crm-wizard-active-bg-color: $gray-lighter !default;
+$crm-wizard-active-font-color: $brand-primary !default;
