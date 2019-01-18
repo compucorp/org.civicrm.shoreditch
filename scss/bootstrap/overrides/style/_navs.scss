@@ -61,6 +61,10 @@
       padding: $crm-nav-stacked-link-padding;
     }
 
+    > a:focus {
+      background-color: transparent;
+    }
+
     + li {
       margin-left: 0;
     }
